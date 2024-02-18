@@ -22,7 +22,7 @@ gulp.task('sass', () => {
         )
         .pipe(sourcemaps.init())
         // outputStyle: expanded or compressed
-        .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+        .pipe(sass.sync({outputStyle: 'expanded'}).on('error', sass.logError))
         .pipe(prefix('last 2 versions'))
         .pipe(gcmqp())
         .pipe(sourcemaps.write())
